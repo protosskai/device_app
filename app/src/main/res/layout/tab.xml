@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="48dp"
+    android:orientation="horizontal"
+    android:paddingTop="5dp">
+
+    <LinearLayout
+        android:id="@+id/tab_item_main"
+        style="@style/tab_item_linear_layout">
+
+        <ImageButton
+            android:id="@+id/tab_item_main_btn"
+            style="@style/tab_item_image_button"
+            android:src="@drawable/item_main" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主页"
+            android:textColor="#FFFFFF"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_item_device"
+        style="@style/tab_item_linear_layout">
+
+        <ImageButton
+            android:id="@+id/tab_item_device_btn"
+            style="@style/tab_item_image_button"
+            android:src="@drawable/item_device" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设备详情"
+            android:textColor="#FFFFFF"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_item_person"
+        style="@style/tab_item_linear_layout">
+
+        <ImageButton
+            android:id="@+id/tab_item_person_btn"
+            style="@style/tab_item_image_button"
+            android:src="@drawable/item_person" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="个人中心"
+            android:textColor="#FFFFFF"
+            android:textSize="10dp" />
+    </LinearLayout>
+</LinearLayout>
