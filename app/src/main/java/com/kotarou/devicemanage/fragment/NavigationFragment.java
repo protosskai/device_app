@@ -25,7 +25,6 @@ public class NavigationFragment extends BaseFragment implements View.OnClickList
     private DeviceFragment deviceFragment;
     private PersonFragment personFragment;
 
-
     @Override
     public void onClick(View v) {
         setTabSelection(v.getId());
@@ -57,6 +56,7 @@ public class NavigationFragment extends BaseFragment implements View.OnClickList
         itemMainBtn = view.findViewById(R.id.tab_item_main_btn);
         itemDeviceBtn = view.findViewById(R.id.tab_item_device_btn);
         itemPersonBtn = view.findViewById(R.id.tab_item_person_btn);
+
     }
 
     // 设置Tab选中

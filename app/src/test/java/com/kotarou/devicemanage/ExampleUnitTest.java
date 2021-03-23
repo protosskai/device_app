@@ -1,5 +1,7 @@
 package com.kotarou.devicemanage;
 
+import com.kotarou.devicemanage.utils.HttpUtil;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -14,4 +16,11 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void http_get() {
+        HttpUtil.get();
+    }
+
+
 }
