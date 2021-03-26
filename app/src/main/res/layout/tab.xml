@@ -39,20 +39,20 @@
             android:textSize="10dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/tab_item_person"
-        style="@style/tab_item_linear_layout">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/tab_item_person"-->
+<!--        style="@style/tab_item_linear_layout">-->
 
-        <ImageButton
-            android:id="@+id/tab_item_person_btn"
-            style="@style/tab_item_image_button"
-            android:src="@drawable/item_person" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/tab_item_person_btn"-->
+<!--            style="@style/tab_item_image_button"-->
+<!--            android:src="@drawable/item_person" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="个人中心"
-            android:textColor="#FFFFFF"
-            android:textSize="10dp" />
-    </LinearLayout>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="个人中心"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:textSize="10dp" />-->
+<!--    </LinearLayout>-->
 </LinearLayout>

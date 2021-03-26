@@ -3,22 +3,95 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <!--顶部导航栏-->
+    <include layout="@layout/component_search_bar" />
+    <!--显示用户基本信息-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp">
+        <!--头像-->
+        <ImageView
+            android:id="@+id/avatar_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/avatar" />
+        <!--姓名学号-->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/avatar_img">
+            <!--姓名-->
+            <TextView
+                android:id="@+id/name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="姓名:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/name_label"
+                android:text="张凯"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <!--学号-->
+            <TextView
+                android:id="@+id/number_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="学号" />
+
+            <TextView
+                android:id="@+id/number_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/number_label"
+                android:text="2017081023" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/role_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="学生" />
+
+        <TextView
+            android:id="@+id/role_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toLeftOf="@+id/role_txt"
+            android:text="身份：" />
+    </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="这是main界面"
-        android:textColor="#000000"
-        android:textSize="24dp" />
+        android:layout_height="3dp"
+        android:background="@drawable/splitter" />
 
-    <Button
-        android:id="@+id/weatherBtn"
+    <!--操作记录列表-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/operation_record_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="天气" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-    <TextView
-        android:id="@+id/weather_res"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 </LinearLayout>

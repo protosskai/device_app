@@ -3,8 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <!--顶部导航栏-->
+    <include layout="@layout/component_search_bar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/device_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="这是device界面" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 </LinearLayout>

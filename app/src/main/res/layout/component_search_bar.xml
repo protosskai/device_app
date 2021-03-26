@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/bar_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="主页"/>
+    <!--搜索按钮-->
+    <ImageButton
+        android:id="@+id/search_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/icon_action_query" />
+
+</RelativeLayout>
