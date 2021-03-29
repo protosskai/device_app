@@ -3,7 +3,7 @@ package com.kotarou.devicemanage.entity;
 import com.google.common.base.MoreObjects;
 
 public class HttpResult<T> {
-    private int status;
+    private int code;
     private String message;
     private T data;
 
@@ -16,12 +16,12 @@ public class HttpResult<T> {
     }
 
 
-    public int getStatus() {
-        return status;
+    public int getCode() {
+        return code;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setCode(int code) {
+        this.code = code;
     }
 
     public T getData() {
@@ -35,7 +35,7 @@ public class HttpResult<T> {
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
-                .add("status", status)
+                .add("code", code)
                 .add("message", message)
                 .add("data", data)
                 .toString();

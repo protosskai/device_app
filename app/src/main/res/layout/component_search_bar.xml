@@ -9,10 +9,10 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:textSize="23sp"
-        android:textStyle="bold"
+        android:text="主页"
         android:textColor="@color/white"
-        android:text="主页"/>
+        android:textSize="23sp"
+        android:textStyle="bold" />
     <!--搜索按钮-->
     <ImageButton
         android:id="@+id/search_btn"
@@ -23,5 +23,15 @@
         android:layout_margin="5dp"
         android:layout_marginRight="10dp"
         android:src="@drawable/icon_action_query" />
+
+    <ImageButton
+        android:id="@+id/scan_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/search_btn"
+        android:src="@drawable/ic_scan" />
 
 </RelativeLayout>

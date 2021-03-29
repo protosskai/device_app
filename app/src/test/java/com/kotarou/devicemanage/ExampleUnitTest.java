@@ -1,6 +1,6 @@
 package com.kotarou.devicemanage;
 
-import com.kotarou.devicemanage.utils.HttpUtil;
+import com.kotarou.devicemanage.presenter.BasePresenter;
 
 import org.junit.Test;
 
@@ -19,7 +19,7 @@ public class ExampleUnitTest {
 
     @Test
     public void http_get() {
-        HttpUtil.get();
+        BasePresenter.get();
     }
 
 
