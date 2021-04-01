@@ -23,16 +23,6 @@
         android:src="@drawable/launch_bg" />
 
     <TextView
-        android:id="@+id/launch_countdown_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/welcome_text"
-        android:layout_centerHorizontal="true"
-        android:text="5"
-        android:textColor="#000000"
-        android:textSize="36dp" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

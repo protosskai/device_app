@@ -3,7 +3,7 @@ package com.kotarou.devicemanage.entity;
 import java.io.Serializable;
 
 public class DeviceInfo implements Serializable {
-    private int deviceId;
+    private int id;
     private String deviceName;
     private int isAllowLend;
     private String principalUser;
@@ -47,12 +47,12 @@ public class DeviceInfo implements Serializable {
     }
 
 
-    public int getDeviceId() {
-        return deviceId;
+    public int getId() {
+        return id;
     }
 
-    public void setDeviceId(int deviceId) {
-        this.deviceId = deviceId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getIsMaintain() {

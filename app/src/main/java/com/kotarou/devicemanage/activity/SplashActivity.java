@@ -24,8 +24,7 @@ public class SplashActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        TextView textView = findViewById(R.id.launch_countdown_text);
-        Observable.intervalRange(0, 6, 0, 1, TimeUnit.SECONDS)
+        Observable.intervalRange(0, 2, 0, 1, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Long>() {
@@ -36,8 +35,6 @@ public class SplashActivity extends BaseActivity {
 
                     @Override
                     public void onNext(@NonNull Long aLong) {
-                        String s = String.valueOf(5 - aLong);
-                        textView.setText(s);
                     }
 
                     @Override

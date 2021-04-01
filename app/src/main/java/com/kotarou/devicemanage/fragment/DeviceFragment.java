@@ -32,6 +32,8 @@ public class DeviceFragment extends BaseFragment {
 
     private List<DeviceInfo> deviceInfoList = new ArrayList<>();
     private DevicePresenter devicePresenter = new DevicePresenter();
+    RecyclerView recyclerView;
+    DeviceAdapter deviceAdapter;
 
     @Nullable
     @Override
@@ -43,11 +45,37 @@ public class DeviceFragment extends BaseFragment {
         return view;
     }
 
+    @Override
+    public void processTimer() {
+        devicePresenter.getDeviceList(new Observer<DeviceInfo>() {
+            @Override
+            public void onSubscribe(@io.reactivex.annotations.NonNull Disposable d) {
+                deviceInfoList.clear();
+            }
+
+            @Override
+            public void onNext(@io.reactivex.annotations.NonNull DeviceInfo deviceInfo) {
+                deviceInfoList.add(deviceInfo);
+                deviceAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onError(@io.reactivex.annotations.NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
+
     public void initDeviceList(View view) {
-        RecyclerView recyclerView = view.findViewById(R.id.device_info_list);
+        recyclerView = view.findViewById(R.id.device_info_list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
-        DeviceAdapter deviceAdapter = new DeviceAdapter(deviceInfoList);
+        deviceAdapter = new DeviceAdapter(deviceInfoList);
         recyclerView.setAdapter(deviceAdapter);
         recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
             @Override

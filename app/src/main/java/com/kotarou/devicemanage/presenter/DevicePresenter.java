@@ -1,6 +1,7 @@
 package com.kotarou.devicemanage.presenter;
 
 import com.google.gson.Gson;
+import com.kotarou.devicemanage.common.HttpException;
 import com.kotarou.devicemanage.entity.DeviceInfo;
 import com.kotarou.devicemanage.entity.HttpResult;
 import com.kotarou.devicemanage.http.DeviceService;
@@ -26,15 +27,17 @@ public class DevicePresenter extends BasePresenter {
                 .flatMap((Function<Map, Observable<Map>>) map -> {
                     List<Map> l = (List<Map>) map.get("list");
                     return Observable.fromIterable(l);
-                }).map(map -> {
-                    Gson gson = new Gson();
-                    String json = gson.toJson(map);
-                    DeviceInfo deviceInfo = gson.fromJson(json, DeviceInfo.class);
-//                    DeviceInfo deviceInfo = new DeviceInfo();
-//                    deviceInfo.setDeviceName((String) map.get("deviceName"));
-//                    deviceInfo.setIsAllowLend(1);
-                    return deviceInfo;
-                });
+                }).map(map -> this.MapToObject(map, DeviceInfo.class));
+        toSubscribe(observable, observer);
+    }
+
+    public void lendDevice(Observer<Integer> observer, int userId, int deviceId, String detail) {
+        Observable observable = mDeviceService.lendDevice(userId, deviceId, detail).map(mapHttpResult -> mapHttpResult.getCode());
+        toSubscribe(observable, observer);
+    }
+
+    public void returnDevice(Observer<Integer> observer, int userId, int deviceId) {
+        Observable observable = mDeviceService.returnDevice(userId, deviceId).map(mapHttpResult -> mapHttpResult.getCode());
         toSubscribe(observable, observer);
     }
 }
